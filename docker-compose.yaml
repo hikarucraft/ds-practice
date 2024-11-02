@@ -1,11 +1,11 @@
 version: '3'
 services:
-  poetry_setup_cli:
+  python_cli:
     restart: always
     build:
       context: .
       dockerfile: ./docker/python/Dockerfile
-    container_name: 'poetry_setup'
+    container_name: 'python_container'
     working_dir: '/app'
     tty: true
     volumes:
