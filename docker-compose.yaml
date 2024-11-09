@@ -1,5 +1,12 @@
 version: '3'
 services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: dsuser
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
   python_cli:
     restart: always
     build:
@@ -10,3 +17,5 @@ services:
     tty: true
     volumes:
       - ./:/app
+volumes:
+  postgres_volume:
